@@ -7,7 +7,7 @@ using UnityEngine;
 namespace FriendlyMonster.RhubarbTimeline
 {
     public static class RhubarbEditorProcess
-    {
+    {/*
         public static bool IsValid(string rhubarbPath)
         {
 #if UNITY_EDITOR_WIN
@@ -110,6 +110,6 @@ namespace FriendlyMonster.RhubarbTimeline
 #if UNITY_EDITOR_OSX
             return arg.Length > 0 ? arg : "\'\'";
 #endif
-        }
+        }*/
     }
 }

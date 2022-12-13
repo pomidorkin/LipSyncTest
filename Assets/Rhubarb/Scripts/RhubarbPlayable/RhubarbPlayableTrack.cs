@@ -3,8 +3,8 @@ using UnityEngine.Playables;
 
 namespace UnityEngine.Timeline
 {
-    [TrackColor(0.855f, 0.8623f, 0.87f)]
-    [TrackClipType(typeof(RhubarbPlayableClip))]
+    //[TrackColor(0.855f, 0.8623f, 0.87f)]
+    /*[TrackClipType(typeof(RhubarbPlayableClip))]
     [TrackBindingType(typeof(RhubarbSprite))]
     public class RhubarbPlayableTrack : TrackAsset
     {
@@ -21,7 +21,7 @@ namespace UnityEngine.Timeline
 
         // Please note this assumes only one component of type MouthShapeSetter on the same gameobject.
         public override void GatherProperties(PlayableDirector director, IPropertyCollector driver)
-        {
+        {*//*
 #if UNITY_EDITOR
             RhubarbSprite trackBinding = director.GetGenericBinding(this) as RhubarbSprite;
             if (trackBinding == null)
@@ -35,8 +35,14 @@ namespace UnityEngine.Timeline
             // 2. Search the text for the track binding component type.
             // 3. Look through the field names until you see one that looks correct.
             //driver.AddFromName<RhubarbSprite>(trackBinding.gameObject, "m_MouthShape");
-#endif
+#endif*//*
             base.GatherProperties(director, driver);
         }
+    }*/
+    [TrackBindingType(typeof(RhubarbSprite))]
+    [TrackClipType(typeof(RhubarbPlayableClip))]
+    public class RhubarbPlayableTrack : TrackAsset
+    {
+    
     }
 }

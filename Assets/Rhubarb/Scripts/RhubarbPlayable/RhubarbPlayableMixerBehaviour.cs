@@ -5,12 +5,12 @@ namespace UnityEngine.Timeline
 {
     public class RhubarbPlayabeMixerBehaviour : PlayableBehaviour
     {
-        MouthShape m_DefaultMouthShape = MouthShape.X;
+        /*MouthShape m_DefaultMouthShape = MouthShape.X;
         MouthShape m_AssignedMouthShape;
 
-        RhubarbSprite m_TrackBinding;
+        RhubarbSprite m_TrackBinding;*/
 
-        public override void ProcessFrame(Playable playable, FrameData info, object playerData)
+        /*public override void ProcessFrame(Playable playable, FrameData info, object playerData)
         {
             m_TrackBinding = playerData as RhubarbSprite;
 
@@ -19,12 +19,17 @@ namespace UnityEngine.Timeline
 
             int inputCount = playable.GetInputCount();
 
+            
+
             float totalWeight = 0f;
             float greatestWeight = 0f;
             int currentInputs = 0;
 
+            
+
             for (int i = 0; i < inputCount; i++)
             {
+                
                 float inputWeight = playable.GetInputWeight(i);
                 ScriptPlayable<RhubarbPlayableBehaviour> inputPlayable = (ScriptPlayable<RhubarbPlayableBehaviour>) playable.GetInput(i);
                 RhubarbPlayableBehaviour input = inputPlayable.GetBehaviour();
@@ -46,6 +51,19 @@ namespace UnityEngine.Timeline
             {
                 m_TrackBinding.MouthShape = m_DefaultMouthShape;
             }
-        }
+        }*/
+
+        /*public override void ProcessFrame(Playable playable, FrameData info, object playerData)
+        {
+            m_TrackBinding = playerData as RhubarbSprite;
+
+            if (m_TrackBinding == null)
+                return;
+
+            m_TrackBinding.MouthShape = m_AssignedMouthShape;
+        }*/
+
+
+
     }
 }

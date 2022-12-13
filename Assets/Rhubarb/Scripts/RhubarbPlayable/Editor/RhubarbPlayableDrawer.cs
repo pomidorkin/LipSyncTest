@@ -4,7 +4,7 @@ namespace UnityEngine.Timeline
 {
     [CustomPropertyDrawer(typeof(RhubarbPlayableBehaviour))]
     public class RhubarbPlayableDrawer : PropertyDrawer
-    {
+    {/*
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
             int fieldCount = 1;
@@ -17,6 +17,6 @@ namespace UnityEngine.Timeline
 
             Rect singleFieldRect = new Rect(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
             EditorGUI.PropertyField(singleFieldRect, MouthShapeProp);
-        }
+        }*/
     }
 }

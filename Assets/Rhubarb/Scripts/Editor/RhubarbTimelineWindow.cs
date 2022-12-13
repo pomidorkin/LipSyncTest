@@ -7,7 +7,7 @@ using UnityEngine.Playables;
 namespace FriendlyMonster.RhubarbTimeline
 {
     public class RhubarbTimelineWindow : EditorWindow
-    {
+    {/*
         private string _rhubarbPath;
         private const string rhubarbPathKey = "Rhubarb_RhubarbPath";
 
@@ -56,14 +56,14 @@ namespace FriendlyMonster.RhubarbTimeline
 
                 EditorGUILayout.Separator();
 
-                _timeline = (PlayableDirector) EditorGUILayout.ObjectField("Timeline", _timeline, typeof(PlayableDirector), true);
-                _rhubarbSprite = (RhubarbSprite) EditorGUILayout.ObjectField("Rhubarb Sprite", _rhubarbSprite, typeof(RhubarbSprite), true);
-                _audioSource = (AudioSource) EditorGUILayout.ObjectField("Audio Source", _audioSource, typeof(AudioSource), true);
+                _timeline = (PlayableDirector)EditorGUILayout.ObjectField("Timeline", _timeline, typeof(PlayableDirector), true);
+                _rhubarbSprite = (RhubarbSprite)EditorGUILayout.ObjectField("Rhubarb Sprite", _rhubarbSprite, typeof(RhubarbSprite), true);
+                _audioSource = (AudioSource)EditorGUILayout.ObjectField("Audio Source", _audioSource, typeof(AudioSource), true);
 
                 EditorGUILayout.Separator();
 
-                _audioClip = (AudioClip) EditorGUILayout.ObjectField("Audio Clip", _audioClip, typeof(AudioClip), false);
-                
+                _audioClip = (AudioClip)EditorGUILayout.ObjectField("Audio Clip", _audioClip, typeof(AudioClip), false);
+
                 _isUseDialog = EditorGUILayout.Toggle("Use Dialog", _isUseDialog);
                 if (_isUseDialog)
                 {
@@ -99,7 +99,8 @@ namespace FriendlyMonster.RhubarbTimeline
                 }
 
                 EditorGUI.EndDisabledGroup();
-            } else
+            }
+            else
             {
                 if (GUILayout.Button("Locate Rhubarb"))
                 {
@@ -118,10 +119,10 @@ namespace FriendlyMonster.RhubarbTimeline
         {
 #if UNITY_EDITOR_WIN
             _rhubarbPath = EditorUtility.OpenFilePanel("Open Rhubarb exe", "", "exe");
-    #endif
+#endif
 #if UNITY_EDITOR_OSX
             _rhubarbPath = EditorUtility.OpenFilePanel("Open Rhubarb", "", "");
-    #endif
+#endif
         }
 
         private bool IsRhubarbPathValid()
@@ -141,18 +142,18 @@ namespace FriendlyMonster.RhubarbTimeline
 
         private void CreateAudio()
         {
-            TimelineAsset timelineAsset = (TimelineAsset) _timeline.playableAsset;
+            TimelineAsset timelineAsset = (TimelineAsset)_timeline.playableAsset;
             AudioTrack audioTrack = timelineAsset.CreateTrack<AudioTrack>(null, "Audio Track");
             _timeline.SetGenericBinding(audioTrack, _audioSource);
             TimelineClip clip = audioTrack.CreateClip<AudioPlayableAsset>();
-            AudioPlayableAsset asset = (AudioPlayableAsset) clip.asset;
+            AudioPlayableAsset asset = (AudioPlayableAsset)clip.asset;
             asset.clip = _audioClip;
             clip.duration = _audioClip.length;
         }
 
         private void CreateRhubarb()
         {
-            TimelineAsset timelineAsset = (TimelineAsset) _timeline.playableAsset;
+            TimelineAsset timelineAsset = (TimelineAsset)_timeline.playableAsset;
             RhubarbPlayableTrack track = timelineAsset.CreateTrack<RhubarbPlayableTrack>(null, "Rhubarb Track");
             _timeline.SetGenericBinding(track, _rhubarbSprite);
             string audioPath = Path.Combine(Directory.GetCurrentDirectory(), AssetDatabase.GetAssetPath(_audioClip));
@@ -165,8 +166,8 @@ namespace FriendlyMonster.RhubarbTimeline
                 TimelineClip clip = track.CreateClip<RhubarbPlayableClip>();
                 clip.start = Rhubarb.FrameToTime(keyframe.frame);
                 clip.duration = Rhubarb.FrameToTime(nextKeyframe.frame - keyframe.frame);
-                ((RhubarbPlayableClip) clip.asset).template.MouthShape = keyframe.phoneme;
+                ((RhubarbPlayableClip)clip.asset).template.MouthShape = keyframe.phoneme;
             }
-        }
+        }*/
     }
 }
