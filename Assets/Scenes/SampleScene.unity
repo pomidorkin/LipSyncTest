@@ -155,9 +155,9 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: 6030842980624285226, guid: 4bbcb66518e3cd04eaa2d126c42ac81a, type: 2}
+  - key: {fileID: -4287418774888896302, guid: 4bbcb66518e3cd04eaa2d126c42ac81a, type: 2}
     value: {fileID: 1905648809}
-  - key: {fileID: 7758286498795796271, guid: 4bbcb66518e3cd04eaa2d126c42ac81a, type: 2}
+  - key: {fileID: -5504245585882572646, guid: 4bbcb66518e3cd04eaa2d126c42ac81a, type: 2}
     value: {fileID: 1905648808}
   m_ExposedReferences:
     m_References: []

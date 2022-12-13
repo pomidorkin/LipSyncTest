@@ -7,7 +7,7 @@ using UnityEngine.Playables;
 namespace FriendlyMonster.RhubarbTimeline
 {
     public class RhubarbTimelineWindow : EditorWindow
-    {/*
+    {
         private string _rhubarbPath;
         private const string rhubarbPathKey = "Rhubarb_RhubarbPath";
 
@@ -166,8 +166,8 @@ namespace FriendlyMonster.RhubarbTimeline
                 TimelineClip clip = track.CreateClip<RhubarbPlayableClip>();
                 clip.start = Rhubarb.FrameToTime(keyframe.frame);
                 clip.duration = Rhubarb.FrameToTime(nextKeyframe.frame - keyframe.frame);
-                ((RhubarbPlayableClip)clip.asset).template.MouthShape = keyframe.phoneme;
+                ((RhubarbPlayableClip)clip.asset)._mouthShape = keyframe.phoneme;
             }
-        }*/
+        }
     }
 }
