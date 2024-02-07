@@ -29,7 +29,7 @@ namespace FriendlyMonster.RhubarbTimeline
 #endif
         }
 
-        public static RhubarbTrack Auto(string rhubarbPath, string audioPath, string dialog, bool _isG = true, bool _isH = true, bool _isX = true)
+        public static RhubarbTrack Auto(string rhubarbPath, string audioPath, string dialog, bool _isG = true, bool _isH = true, bool _isX = true, bool isPhonetic = false)
         {
             rhubarbPath = FixPath(rhubarbPath);
             audioPath = FixPath(audioPath);
@@ -51,6 +51,7 @@ namespace FriendlyMonster.RhubarbTimeline
 #if UNITY_EDITOR_WIN
             process.StartInfo.FileName = rhubarbPath;
             string command = "";
+            command += isPhonetic ? "\"" + "--recognizer " + "phonetic" + "\" " : "";
             command += "\"" + audioPath + "\" ";
             command += isDialog ? "--dialogFile \"" + dialogPath + "\" " : "";
             command += "--extendedShapes " + extendedMouthShapesArgument;

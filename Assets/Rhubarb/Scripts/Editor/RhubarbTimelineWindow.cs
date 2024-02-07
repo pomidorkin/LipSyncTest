@@ -17,6 +17,7 @@ namespace FriendlyMonster.RhubarbTimeline
 
         private AudioClip _audioClip;
         private bool _isUseDialog;
+        private bool _isPhonetic;
         private string _dialogText;
         private bool _isExtendedMouthShapesFoldout;
         private bool _isMouthShapeG = true;
@@ -71,6 +72,8 @@ namespace FriendlyMonster.RhubarbTimeline
                     _dialogText = EditorGUILayout.TextField("Dialog Text", _dialogText);
                     EditorGUI.indentLevel--;
                 }
+
+                _isPhonetic = EditorGUILayout.Toggle("Phonetic recognizer", _isPhonetic);
 
                 _isExtendedMouthShapesFoldout = EditorGUILayout.Foldout(_isExtendedMouthShapesFoldout, "Extended Mouth Shapes");
                 if (_isExtendedMouthShapesFoldout)
@@ -157,7 +160,7 @@ namespace FriendlyMonster.RhubarbTimeline
             RhubarbPlayableTrack track = timelineAsset.CreateTrack<RhubarbPlayableTrack>(null, "Rhubarb Track");
             _timeline.SetGenericBinding(track, _rhubarbSprite);
             string audioPath = Path.Combine(Directory.GetCurrentDirectory(), AssetDatabase.GetAssetPath(_audioClip));
-            RhubarbTrack rhubarbTrack = RhubarbEditorProcess.Auto(_rhubarbPath, audioPath, _isUseDialog ? _dialogText : null, _isMouthShapeG, _isMouthShapeH, _isMouthShapeX);
+            RhubarbTrack rhubarbTrack = RhubarbEditorProcess.Auto(_rhubarbPath, audioPath, _isUseDialog ? _dialogText : null, _isMouthShapeG, _isMouthShapeH, _isMouthShapeX, _isPhonetic);
 
             for (int i = 0; i < rhubarbTrack.keyframes.Count - 1; i++)
             {
